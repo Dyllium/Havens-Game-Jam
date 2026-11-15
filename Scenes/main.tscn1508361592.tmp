@@ -1,0 +1,417 @@
+[gd_scene format=3 uid="uid://ct48w41xrllsw"]
+
+[ext_resource type="PackedScene" uid="uid://dyk5rewd0abwy" path="res://Scenes/ball_spawner.tscn" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://b3bmf04wn4uuu" path="res://Scenes/multipliers/outer_multipler.tscn" id="1_jjvhh"]
+[ext_resource type="Script" uid="uid://1kaiyk46nh1" path="res://Scripts/main.gd" id="1_kry3j"]
+[ext_resource type="PackedScene" uid="uid://b30pngpw16ifi" path="res://Scenes/multipliers/2_nd_outer_multiplier.tscn" id="2_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cut0wv0k12h4d" path="res://Scenes/multipliers/2_nd_inner_multiplier.tscn" id="4_344ge"]
+[ext_resource type="Texture2D" uid="uid://bkxgkctc1bro1" path="res://test.png" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://vmlkc5x0y6l2" path="res://Scenes/multipliers/inner_multiplier.tscn" id="5_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://ca053t1rqlbe7" path="res://Scenes/multipliers/middle_multiplier.tscn" id="6_hptm8"]
+[ext_resource type="PackedScene" uid="uid://buwbppiejeeiw" path="res://Scenes/pegs/basic_peg.tscn" id="9_ynf5e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_344ge"]
+font_color = Color(0.88235295, 0.49411765, 0, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hptm8"]
+bounce = 1.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fequl"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ynf5e"]
+bounce = 1.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ynf5e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fequl"]
+size = Vector2(3, 46)
+
+[node name="Main" type="Node2D" unique_id=2032051272 node_paths=PackedStringArray("multipliers")]
+script = ExtResource("1_kry3j")
+multipliers = [NodePath("Multipliers/x10"), NodePath("Multipliers/x5"), NodePath("Multipliers/x2"), NodePath("Multipliers/x1"), NodePath("Multipliers/x0")]
+
+[node name="Multipliers" type="Node2D" parent="." unique_id=861612021]
+
+[node name="x10" parent="Multipliers" unique_id=1559302939 instance=ExtResource("1_jjvhh")]
+
+[node name="x5" parent="Multipliers" unique_id=318026427 instance=ExtResource("2_kry3j")]
+
+[node name="x2" parent="Multipliers" unique_id=819144335 instance=ExtResource("6_hptm8")]
+
+[node name="x1" parent="Multipliers" unique_id=724938505 instance=ExtResource("4_344ge")]
+
+[node name="x0" parent="Multipliers" unique_id=495661200 instance=ExtResource("5_ynf5e")]
+
+[node name="BallSpawner" parent="." unique_id=1067192474 instance=ExtResource("1_8gbba")]
+position = Vector2(222, 23)
+
+[node name="ScoreText" type="Label" parent="." unique_id=2022087563]
+offset_left = 491.0
+offset_top = 326.0
+offset_right = 594.0
+offset_bottom = 349.0
+text = "Money: -1000"
+label_settings = SubResource("LabelSettings_344ge")
+
+[node name="Test" type="Sprite2D" parent="." unique_id=1946862695]
+z_index = -2
+texture = ExtResource("4_jjvhh")
+centered = false
+
+[node name="Barriers" type="Node2D" parent="." unique_id=892252941]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Barriers" unique_id=1038495015]
+physics_material_override = SubResource("PhysicsMaterial_hptm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/StaticBody2D" unique_id=1422830948]
+position = Vector2(4, 0)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_fequl")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Barriers" unique_id=1303157733]
+position = Vector2(436, 0)
+physics_material_override = SubResource("PhysicsMaterial_ynf5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/StaticBody2D2" unique_id=1938232923]
+position = Vector2(4, 0)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_ynf5e")
+
+[node name="Labels" type="Node2D" parent="." unique_id=335394715]
+
+[node name="x10Left" type="Label" parent="Labels" unique_id=2103983090]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = 328.0
+offset_right = 47.0
+offset_bottom = 351.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x10"
+horizontal_alignment = 1
+
+[node name="x5Left" type="Label" parent="Labels" unique_id=1787488681]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 57.0
+offset_top = 328.0
+offset_right = 97.0
+offset_bottom = 351.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x5"
+horizontal_alignment = 1
+
+[node name="x2Left" type="Label" parent="Labels" unique_id=2124722151]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 107.0
+offset_top = 327.0
+offset_right = 147.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x2"
+horizontal_alignment = 1
+
+[node name="x1Left" type="Label" parent="Labels" unique_id=950942057]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 156.0
+offset_top = 327.0
+offset_right = 196.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x1"
+horizontal_alignment = 1
+
+[node name="x0" type="Label" parent="Labels" unique_id=138106879]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 203.0
+offset_top = 327.0
+offset_right = 243.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x0"
+horizontal_alignment = 1
+
+[node name="x10Right" type="Label" parent="Labels" unique_id=457968230]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 393.0
+offset_top = 326.0
+offset_right = 433.0
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x10"
+horizontal_alignment = 1
+
+[node name="x5Right" type="Label" parent="Labels" unique_id=372720620]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 346.0
+offset_top = 327.0
+offset_right = 386.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x5"
+horizontal_alignment = 1
+
+[node name="x2Right" type="Label" parent="Labels" unique_id=2013964562]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 298.0
+offset_top = 327.0
+offset_right = 338.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x2"
+horizontal_alignment = 1
+
+[node name="x1Right" type="Label" parent="Labels" unique_id=1531364608]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 251.0
+offset_top = 327.0
+offset_right = 291.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x1"
+horizontal_alignment = 1
+
+[node name="Pegs" type="Node2D" parent="." unique_id=1379390275]
+
+[node name="Odd" type="Node2D" parent="Pegs" unique_id=733799970]
+
+[node name="basicPeg" parent="Pegs/Odd" unique_id=1804966080 instance=ExtResource("9_ynf5e")]
+position = Vector2(14, 50)
+
+[node name="basicPeg2" parent="Pegs/Odd" unique_id=499908400 instance=ExtResource("9_ynf5e")]
+position = Vector2(64, 50)
+
+[node name="basicPeg3" parent="Pegs/Odd" unique_id=1164099808 instance=ExtResource("9_ynf5e")]
+position = Vector2(114, 50)
+
+[node name="basicPeg4" parent="Pegs/Odd" unique_id=43268901 instance=ExtResource("9_ynf5e")]
+position = Vector2(164, 50)
+
+[node name="basicPeg5" parent="Pegs/Odd" unique_id=1686455458 instance=ExtResource("9_ynf5e")]
+position = Vector2(214, 50)
+
+[node name="basicPeg6" parent="Pegs/Odd" unique_id=1588826150 instance=ExtResource("9_ynf5e")]
+position = Vector2(264, 50)
+
+[node name="basicPeg7" parent="Pegs/Odd" unique_id=245747320 instance=ExtResource("9_ynf5e")]
+position = Vector2(314, 50)
+
+[node name="basicPeg8" parent="Pegs/Odd" unique_id=1593156975 instance=ExtResource("9_ynf5e")]
+position = Vector2(364, 50)
+
+[node name="basicPeg9" parent="Pegs/Odd" unique_id=833246046 instance=ExtResource("9_ynf5e")]
+position = Vector2(414, 50)
+
+[node name="Odd3" type="Node2D" parent="Pegs" unique_id=1271203265]
+
+[node name="basicPeg" parent="Pegs/Odd3" unique_id=717523340 instance=ExtResource("9_ynf5e")]
+position = Vector2(14, 194)
+
+[node name="basicPeg2" parent="Pegs/Odd3" unique_id=1408202600 instance=ExtResource("9_ynf5e")]
+position = Vector2(64, 194)
+
+[node name="basicPeg3" parent="Pegs/Odd3" unique_id=1282331260 instance=ExtResource("9_ynf5e")]
+position = Vector2(114, 194)
+
+[node name="basicPeg4" parent="Pegs/Odd3" unique_id=63220969 instance=ExtResource("9_ynf5e")]
+position = Vector2(164, 194)
+
+[node name="basicPeg5" parent="Pegs/Odd3" unique_id=523339174 instance=ExtResource("9_ynf5e")]
+position = Vector2(214, 194)
+
+[node name="basicPeg6" parent="Pegs/Odd3" unique_id=546205156 instance=ExtResource("9_ynf5e")]
+position = Vector2(264, 194)
+
+[node name="basicPeg7" parent="Pegs/Odd3" unique_id=1900805765 instance=ExtResource("9_ynf5e")]
+position = Vector2(314, 194)
+
+[node name="basicPeg8" parent="Pegs/Odd3" unique_id=2121457084 instance=ExtResource("9_ynf5e")]
+position = Vector2(364, 194)
+
+[node name="basicPeg9" parent="Pegs/Odd3" unique_id=943645888 instance=ExtResource("9_ynf5e")]
+position = Vector2(414, 194)
+
+[node name="Odd2" type="Node2D" parent="Pegs" unique_id=244525116]
+
+[node name="basicPeg" parent="Pegs/Odd2" unique_id=1153311033 instance=ExtResource("9_ynf5e")]
+position = Vector2(14, 122)
+
+[node name="basicPeg2" parent="Pegs/Odd2" unique_id=1890106093 instance=ExtResource("9_ynf5e")]
+position = Vector2(64, 122)
+
+[node name="basicPeg3" parent="Pegs/Odd2" unique_id=553035001 instance=ExtResource("9_ynf5e")]
+position = Vector2(114, 122)
+
+[node name="basicPeg4" parent="Pegs/Odd2" unique_id=2141967592 instance=ExtResource("9_ynf5e")]
+position = Vector2(164, 122)
+
+[node name="basicPeg5" parent="Pegs/Odd2" unique_id=1755483243 instance=ExtResource("9_ynf5e")]
+position = Vector2(214, 122)
+
+[node name="basicPeg6" parent="Pegs/Odd2" unique_id=528890893 instance=ExtResource("9_ynf5e")]
+position = Vector2(264, 122)
+
+[node name="basicPeg7" parent="Pegs/Odd2" unique_id=2114031406 instance=ExtResource("9_ynf5e")]
+position = Vector2(314, 122)
+
+[node name="basicPeg8" parent="Pegs/Odd2" unique_id=1577574706 instance=ExtResource("9_ynf5e")]
+position = Vector2(364, 122)
+
+[node name="basicPeg9" parent="Pegs/Odd2" unique_id=1563964097 instance=ExtResource("9_ynf5e")]
+position = Vector2(414, 122)
+
+[node name="Even" type="Node2D" parent="Pegs" unique_id=872052827]
+
+[node name="basicPeg10" parent="Pegs/Even" unique_id=378859636 instance=ExtResource("9_ynf5e")]
+position = Vector2(389, 86)
+
+[node name="basicPeg11" parent="Pegs/Even" unique_id=1836059405 instance=ExtResource("9_ynf5e")]
+position = Vector2(289, 86)
+
+[node name="basicPeg12" parent="Pegs/Even" unique_id=1077079147 instance=ExtResource("9_ynf5e")]
+position = Vector2(239, 86)
+
+[node name="basicPeg13" parent="Pegs/Even" unique_id=214942339 instance=ExtResource("9_ynf5e")]
+position = Vector2(189, 86)
+
+[node name="basicPeg14" parent="Pegs/Even" unique_id=1958088571 instance=ExtResource("9_ynf5e")]
+position = Vector2(139, 86)
+
+[node name="basicPeg15" parent="Pegs/Even" unique_id=1598548342 instance=ExtResource("9_ynf5e")]
+position = Vector2(89, 86)
+
+[node name="basicPeg16" parent="Pegs/Even" unique_id=1625335311 instance=ExtResource("9_ynf5e")]
+position = Vector2(39, 86)
+
+[node name="basicPeg17" parent="Pegs/Even" unique_id=1000180109 instance=ExtResource("9_ynf5e")]
+position = Vector2(339, 86)
+
+[node name="Even3" type="Node2D" parent="Pegs" unique_id=800701386]
+
+[node name="basicPeg10" parent="Pegs/Even3" unique_id=1701375096 instance=ExtResource("9_ynf5e")]
+position = Vector2(389, 230)
+
+[node name="basicPeg11" parent="Pegs/Even3" unique_id=1076533789 instance=ExtResource("9_ynf5e")]
+position = Vector2(289, 230)
+
+[node name="basicPeg12" parent="Pegs/Even3" unique_id=421630875 instance=ExtResource("9_ynf5e")]
+position = Vector2(239, 230)
+
+[node name="basicPeg13" parent="Pegs/Even3" unique_id=1693330630 instance=ExtResource("9_ynf5e")]
+position = Vector2(189, 230)
+
+[node name="basicPeg14" parent="Pegs/Even3" unique_id=545695227 instance=ExtResource("9_ynf5e")]
+position = Vector2(139, 230)
+
+[node name="basicPeg15" parent="Pegs/Even3" unique_id=2007200727 instance=ExtResource("9_ynf5e")]
+position = Vector2(89, 230)
+
+[node name="basicPeg16" parent="Pegs/Even3" unique_id=1255088326 instance=ExtResource("9_ynf5e")]
+position = Vector2(39, 230)
+
+[node name="basicPeg17" parent="Pegs/Even3" unique_id=2018421761 instance=ExtResource("9_ynf5e")]
+position = Vector2(339, 230)
+
+[node name="Even2" type="Node2D" parent="Pegs" unique_id=1728855235]
+
+[node name="basicPeg10" parent="Pegs/Even2" unique_id=1287122618 instance=ExtResource("9_ynf5e")]
+position = Vector2(389, 158)
+
+[node name="basicPeg11" parent="Pegs/Even2" unique_id=833889553 instance=ExtResource("9_ynf5e")]
+position = Vector2(289, 158)
+
+[node name="basicPeg12" parent="Pegs/Even2" unique_id=1371596437 instance=ExtResource("9_ynf5e")]
+position = Vector2(239, 158)
+
+[node name="basicPeg13" parent="Pegs/Even2" unique_id=1361055255 instance=ExtResource("9_ynf5e")]
+position = Vector2(189, 158)
+
+[node name="basicPeg14" parent="Pegs/Even2" unique_id=930395210 instance=ExtResource("9_ynf5e")]
+position = Vector2(139, 158)
+
+[node name="basicPeg15" parent="Pegs/Even2" unique_id=1891927637 instance=ExtResource("9_ynf5e")]
+position = Vector2(89, 158)
+
+[node name="basicPeg16" parent="Pegs/Even2" unique_id=1945749730 instance=ExtResource("9_ynf5e")]
+position = Vector2(39, 158)
+
+[node name="basicPeg17" parent="Pegs/Even2" unique_id=856936454 instance=ExtResource("9_ynf5e")]
+position = Vector2(339, 158)
+
+[node name="RigidBody2D" type="StaticBody2D" parent="." unique_id=1765136952]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=529395717]
+position = Vector2(54.5, 331)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D" unique_id=717518762]
+position = Vector2(102, 333)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D" unique_id=133289347]
+position = Vector2(150, 333)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="RigidBody2D" unique_id=251920526]
+position = Vector2(198, 332)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="RigidBody2D" unique_id=1662764871]
+position = Vector2(246, 332)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="RigidBody2D" unique_id=1854903831]
+position = Vector2(294, 331)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="RigidBody2D" unique_id=1326433292]
+position = Vector2(343, 333)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="RigidBody2D" unique_id=1169009296]
+position = Vector2(391, 333)
+shape = SubResource("RectangleShape2D_fequl")

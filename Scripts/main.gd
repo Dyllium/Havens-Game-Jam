@@ -12,7 +12,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	score_text.text = "Score: " + str(GameManager.score)
+	score_text.text = "Money: " + str(GameManager.score)
 
 func _change_score(amount: int) -> void:
 	GameManager.score += amount

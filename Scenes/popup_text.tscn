@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://clgdep4fqsjt5"]
+
+[ext_resource type="Script" uid="uid://ctmxbhvx1d0w8" path="res://Scripts/popup_text.gd" id="1_o4xd2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ynf5e"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="PopupText" type="Label" unique_id=663245211]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "hello"
+label_settings = SubResource("LabelSettings_ynf5e")
+script = ExtResource("1_o4xd2")

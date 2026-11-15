@@ -2,7 +2,9 @@ extends Node2D
 
 @export var balls: Array[PackedScene]
 var type: int = 0
-var cost: int 
+var maxSpawn: int = 1
+var amountSpawned: int = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,10 +19,9 @@ func _process(delta: float) -> void:
 	var ballScene = balls[type].instantiate()
 	ballScene.global_position.x = global_position.x 
 	
-	if Input.is_action_just_pressed("spawn"):
-		if GameManager.score - ballScene.cost >= 0:
-			GameManager.score -= ballScene.cost
-			get_tree().get_root().add_child(ballScene)
+	if Input.is_action_just_pressed("spawn") and amountSpawned < maxSpawn:
+		amountSpawned += 1
+		get_tree().get_root().add_child(ballScene)
 			
 
 func setBallType() -> void:
