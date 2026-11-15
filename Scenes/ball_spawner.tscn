@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dyk5rewd0abwy"]
+
+[ext_resource type="Script" uid="uid://byet5tpt7lbmt" path="res://Scripts/ball_spawner.gd" id="1_u7vpq"]
+[ext_resource type="PackedScene" uid="uid://br0brvhcacnio" path="res://Scenes/ballTypes/normal_ball.tscn" id="2_c7wme"]
+[ext_resource type="Texture2D" uid="uid://bmy6y337hqhfg" path="res://icon.svg" id="2_r5ejb"]
+
+[node name="BallSpawner" type="Node2D" unique_id=1067192474]
+script = ExtResource("1_u7vpq")
+balls = Array[PackedScene]([ExtResource("2_c7wme")])
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1001041865]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1652974763]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_r5ejb")

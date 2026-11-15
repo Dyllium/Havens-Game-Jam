@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://buwbppiejeeiw"]
+
+[ext_resource type="Script" uid="uid://cmlr2nxp40imp" path="res://Scripts/peg.gd" id="1_8f1kd"]
+[ext_resource type="Texture2D" uid="uid://c7hlvpgxbg6ts" path="res://Assets/basicPeg.png" id="2_8f1kd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fequl"]
+radius = 7.071068
+
+[node name="basicPeg" type="StaticBody2D" unique_id=1804966080]
+script = ExtResource("1_8f1kd")
+metadata/_custom_type_script = "uid://cmlr2nxp40imp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=716472267]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_fequl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1613005265]
+texture = ExtResource("2_8f1kd")
+centered = false

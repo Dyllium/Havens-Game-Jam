@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ca053t1rqlbe7"]
+
+[ext_resource type="Script" uid="uid://bgnrffacurhdg" path="res://Scripts/multiplier.gd" id="1_y0q4s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dq523"]
+size = Vector2(45, 20)
+
+[node name="MiddleMultiplier" type="Area2D" unique_id=819144335]
+script = ExtResource("1_y0q4s")
+multiplierAmount = 2.0
+metadata/_custom_type_script = "uid://bgnrffacurhdg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1569214877]
+position = Vector2(126, 340)
+shape = SubResource("RectangleShape2D_dq523")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1431316030]
+position = Vector2(319, 340)
+shape = SubResource("RectangleShape2D_dq523")
