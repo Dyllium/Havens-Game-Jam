@@ -1,0 +1,1 @@
+Coming up with this game I started with the idea of "You lost all your money and are now in debt, you must play plinko to bounce back out of debt" I thought it fit the theme because plinko is bouncy balls and I also made it so when the ball goes down it "bounces back" to the top.
