@@ -4,6 +4,7 @@ class_name portal extends Area2D
 @export var endPos: Vector2
 @export var linkedPortal: portal
 @export var speed: float = 2
+@export var audio_stream_player_2d: AudioStreamPlayer2D
 
 var time: float = 0
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +26,9 @@ func _on_body_entered(body: Node2D) -> void:
 		body.canTeleport = false
 		var target_position = Transform2D(body.global_rotation, linkedPortal.global_position)
 		PhysicsServer2D.body_set_state(body.get_rid(), PhysicsServer2D.BODY_STATE_TRANSFORM, target_position)
+		body.apply_central_impulse(Vector2(randf_range(-20,20), 0))
+		audio_stream_player_2d.pitch_scale = randf_range(0.9, 1.1)
+		audio_stream_player_2d.play()
 		await get_tree().create_timer(0.4).timeout
 		if is_instance_valid(body):
 			body.canTeleport = true

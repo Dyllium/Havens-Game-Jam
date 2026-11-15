@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c1jcbdwtxpn4k"]
+
+[ext_resource type="Script" uid="uid://be33i5berr35u" path="res://Scripts/win_screen.gd" id="1_l5sol"]
+[ext_resource type="AudioStream" uid="uid://cn8q64c06otya" path="res://SFX/Haven Yay!.wav" id="2_awi1s"]
+[ext_resource type="AudioStream" uid="uid://bq2p3oedtrdq7" path="res://SFX/Haven Celebration.wav" id="3_bwc64"]
+[ext_resource type="Texture2D" uid="uid://cjk07hj4iq61m" path="res://WinScreen.png" id="4_bwc64"]
+
+[node name="WinScreen" type="Node2D" unique_id=566567360]
+script = ExtResource("1_l5sol")
+
+[node name="Label" type="Label" parent="." unique_id=682295718]
+offset_left = 262.0
+offset_top = 164.0
+offset_right = 328.0
+offset_bottom = 187.0
+text = "You win!"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1085609984]
+stream = ExtResource("3_bwc64")
+volume_db = 2.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=1323649580]
+stream = ExtResource("2_awi1s")
+volume_db = 2.0
+
+[node name="WinScreen" type="Sprite2D" parent="." unique_id=190168710]
+texture = ExtResource("4_bwc64")
+centered = false

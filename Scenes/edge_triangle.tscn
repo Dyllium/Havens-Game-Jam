@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://p0lpyw8e6wwk"]
+
+[ext_resource type="Texture2D" uid="uid://b381hwbh0vbxm" path="res://Assets/EdgeTriangles.png" id="1_pw3vm"]
+
+[node name="Edge Triangle" type="StaticBody2D" unique_id=1594788283]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=486229319]
+texture = ExtResource("1_pw3vm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1326885147]
+polygon = PackedVector2Array(6, 0, -8, -8, -8, 7, 6, 0)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://co0apk16qgygp"
+path="res://.godot/imported/Haven MusicLoop.mp3-d300e6c7d2bd573478cb62ca8d6d06cd.mp3str"
+
+[deps]
+
+source_file="res://SFX/Haven MusicLoop.mp3"
+dest_files=["res://.godot/imported/Haven MusicLoop.mp3-d300e6c7d2bd573478cb62ca8d6d06cd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

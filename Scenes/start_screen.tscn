@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bmekif50orinq"]
+
+[ext_resource type="Script" uid="uid://di8cei41li4ak" path="res://Scripts/start_screen.gd" id="1_ainjc"]
+[ext_resource type="Texture2D" uid="uid://cdvgcved0e2tm" path="res://StartScreen.png" id="1_i8r30"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fequl"]
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+
+[node name="StartScreen" type="Node2D" unique_id=986885661]
+script = ExtResource("1_ainjc")
+
+[node name="StartScreen" type="Sprite2D" parent="." unique_id=338221472]
+texture = ExtResource("1_i8r30")
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=1534974587]
+offset_left = 231.0
+offset_top = 322.0
+offset_right = 400.0
+offset_bottom = 385.0
+text = "Space to PLINKO
+"
+label_settings = SubResource("LabelSettings_fequl")

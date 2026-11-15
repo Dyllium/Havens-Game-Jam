@@ -10,13 +10,14 @@ absorbent = true
 [sub_resource type="CircleShape2D" id="CircleShape2D_fequl"]
 radius = 8.062258
 
-[node name="Normal Ball" type="RigidBody2D" unique_id=1940703358 node_paths=PackedStringArray("visibleOnScreenNotifier") groups=["balls"]]
+[node name="Normal Ball" type="RigidBody2D" unique_id=1940703358 node_paths=PackedStringArray("visibleOnScreenNotifier", "audio_stream_player_2d") groups=["balls"]]
 collision_mask = 3
 mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_bo1nx")
 script = ExtResource("1_qo60u")
 value = 1
 visibleOnScreenNotifier = NodePath("VisibleOnScreenNotifier2D")
+audio_stream_player_2d = NodePath("AudioStreamPlayer2D")
 metadata/_custom_type_script = "uid://cjoqxo1cgyft5"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1799065673]
@@ -27,3 +28,5 @@ texture = ExtResource("2_qo60u")
 shape = SubResource("CircleShape2D_fequl")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1288533630]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1311051108]

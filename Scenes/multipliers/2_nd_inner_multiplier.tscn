@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://cut0wv0k12h4d"]
 
 [ext_resource type="Script" uid="uid://bgnrffacurhdg" path="res://Scripts/multiplier.gd" id="1_xalp6"]
+[ext_resource type="AudioStream" uid="uid://bmql7r4opbbch" path="res://SFX/Haven Multiply Sound.wav" id="2_xalp6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fequl"]
 size = Vector2(45, 20)
 
-[node name="2ndInnerMultiplier" type="Area2D" unique_id=724938505]
+[node name="2ndInnerMultiplier" type="Area2D" unique_id=724938505 node_paths=PackedStringArray("audio_stream_player_2d")]
 script = ExtResource("1_xalp6")
 multiplierAmount = 1.0
+audio_stream_player_2d = NodePath("AudioStreamPlayer2D")
 metadata/_custom_type_script = "uid://bgnrffacurhdg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1169961228]
@@ -17,3 +19,6 @@ shape = SubResource("RectangleShape2D_fequl")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=96304910]
 position = Vector2(270, 339)
 shape = SubResource("RectangleShape2D_fequl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1426204804]
+stream = ExtResource("2_xalp6")
