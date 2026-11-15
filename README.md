@@ -1,3 +1,5 @@
+Plinko to get out of DEBT!
+
 You just got into debt because of your poor habits. You need to climb out, but why stop your bad habits? Plinko your way out, drop balls and balls and get upgrades to climb your way out of debt and to bounce back in your life.
 
 You play the game by simply clicking to drop balls down the board, then with that money you can get upgrades to further your winnings.
