@@ -23,6 +23,9 @@ bounce = 1.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ynf5e"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fequl"]
+size = Vector2(3, 46)
+
 [node name="Main" type="Node2D" unique_id=2032051272 node_paths=PackedStringArray("multipliers")]
 script = ExtResource("1_kry3j")
 multipliers = [NodePath("Multipliers/x10"), NodePath("Multipliers/x5"), NodePath("Multipliers/x2"), NodePath("Multipliers/x1"), NodePath("Multipliers/x0")]
@@ -377,3 +380,38 @@ position = Vector2(39, 158)
 
 [node name="basicPeg17" parent="Pegs/Even2" unique_id=856936454 instance=ExtResource("9_ynf5e")]
 position = Vector2(339, 158)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=210617220]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=529395717]
+position = Vector2(54.5, 331)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D" unique_id=717518762]
+position = Vector2(102, 333)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D" unique_id=133289347]
+position = Vector2(150, 333)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="RigidBody2D" unique_id=251920526]
+position = Vector2(198, 332)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="RigidBody2D" unique_id=1662764871]
+position = Vector2(246, 332)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="RigidBody2D" unique_id=1854903831]
+position = Vector2(294, 331)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="RigidBody2D" unique_id=1326433292]
+position = Vector2(343, 333)
+shape = SubResource("RectangleShape2D_fequl")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="RigidBody2D" unique_id=1169009296]
+position = Vector2(391, 333)
+shape = SubResource("RectangleShape2D_fequl")
