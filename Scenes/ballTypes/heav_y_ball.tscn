@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://o8g4vkg7w5c0"]
+
+[ext_resource type="Script" uid="uid://cjoqxo1cgyft5" path="res://Scripts/ball.gd" id="1_hoe46"]
+[ext_resource type="Texture2D" uid="uid://qln6ajac3cbd" path="res://Assets/basicball.png" id="2_8fr2r"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hoe46"]
+bounce = 0.1
+absorbent = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_612tc"]
+radius = 7.28011
+
+[node name="HeavyBall" type="RigidBody2D" unique_id=514462122 node_paths=PackedStringArray("visibleOnScreenNotifier")]
+modulate = Color(0.8039216, 1, 1, 1)
+collision_mask = 2
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_hoe46")
+script = ExtResource("1_hoe46")
+value = 2
+visibleOnScreenNotifier = NodePath("VisibleOnScreenNotifier2D")
+metadata/_custom_type_script = "uid://cjoqxo1cgyft5"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=940035134]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8fr2r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=698304168]
+shape = SubResource("CircleShape2D_612tc")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1989356669]

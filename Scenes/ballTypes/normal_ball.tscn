@@ -10,8 +10,9 @@ absorbent = true
 [sub_resource type="CircleShape2D" id="CircleShape2D_fequl"]
 radius = 8.062258
 
-[node name="Normal Ball" type="RigidBody2D" unique_id=1940703358 node_paths=PackedStringArray("visibleOnScreenNotifier")]
+[node name="Normal Ball" type="RigidBody2D" unique_id=1940703358 node_paths=PackedStringArray("visibleOnScreenNotifier") groups=["balls"]]
 collision_mask = 3
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_bo1nx")
 script = ExtResource("1_qo60u")
 value = 1

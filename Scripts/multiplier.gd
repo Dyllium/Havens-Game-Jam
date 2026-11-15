@@ -22,7 +22,7 @@ func on_body_entered(body: RigidBody2D) -> void:
 	scoreChanged.emit(amount)
 	
 	var popup = popupScene.instantiate()
-	popup.text = "+" + str(int(body.value * multiplierAmount)) + " (x" + str(body.amountDropped) + ")"
+	popup.text = "+" + str(int(body.value * multiplierAmount)) + " (x" + str(clampi(body.amountDropped, 1, 3)) + ")"
 	popup.global_position = body.global_position + Vector2(randf_range(-20,20), -20)
 	get_tree().current_scene.add_child(popup)
 	

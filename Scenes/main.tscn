@@ -8,7 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://bkxgkctc1bro1" path="res://test.png" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://vmlkc5x0y6l2" path="res://Scenes/multipliers/inner_multiplier.tscn" id="5_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://ca053t1rqlbe7" path="res://Scenes/multipliers/middle_multiplier.tscn" id="6_hptm8"]
+[ext_resource type="PackedScene" uid="uid://br0brvhcacnio" path="res://Scenes/ballTypes/normal_ball.tscn" id="8_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://o8g4vkg7w5c0" path="res://Scenes/ballTypes/heav_y_ball.tscn" id="9_jkdf5"]
 [ext_resource type="PackedScene" uid="uid://buwbppiejeeiw" path="res://Scenes/pegs/basic_peg.tscn" id="9_ynf5e"]
+[ext_resource type="Script" uid="uid://bi3ik5xh6s0kq" path="res://Scripts/portal.gd" id="10_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://c7hlvpgxbg6ts" path="res://Assets/basicPeg.png" id="10_hptm8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_344ge"]
 font_color = Color(0.88235295, 0.49411765, 0, 1)
@@ -26,6 +30,15 @@ bounce = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fequl"]
 size = Vector2(3, 46)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1ilt"]
+size = Vector2(40, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6iyac"]
+size = Vector2(40, 12)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d1ilt"]
+load_path = "res://.godot/imported/basicPeg.png-601b143ded6d64ca2a2477643565b5b6.ctex"
+
 [node name="Main" type="Node2D" unique_id=2032051272 node_paths=PackedStringArray("multipliers")]
 script = ExtResource("1_kry3j")
 multipliers = [NodePath("Multipliers/x10"), NodePath("Multipliers/x5"), NodePath("Multipliers/x2"), NodePath("Multipliers/x1"), NodePath("Multipliers/x0")]
@@ -33,8 +46,10 @@ multipliers = [NodePath("Multipliers/x10"), NodePath("Multipliers/x5"), NodePath
 [node name="Multipliers" type="Node2D" parent="." unique_id=861612021]
 
 [node name="x10" parent="Multipliers" unique_id=1559302939 instance=ExtResource("1_jjvhh")]
+multiplierAmount = 5.0
 
 [node name="x5" parent="Multipliers" unique_id=318026427 instance=ExtResource("2_kry3j")]
+multiplierAmount = 3.0
 
 [node name="x2" parent="Multipliers" unique_id=819144335 instance=ExtResource("6_hptm8")]
 
@@ -44,6 +59,7 @@ multipliers = [NodePath("Multipliers/x10"), NodePath("Multipliers/x5"), NodePath
 
 [node name="BallSpawner" parent="." unique_id=1067192474 instance=ExtResource("1_8gbba")]
 position = Vector2(222, 23)
+balls = Array[PackedScene]([ExtResource("8_fdnlq"), ExtResource("9_jkdf5")])
 
 [node name="ScoreText" type="Label" parent="." unique_id=2022087563]
 offset_left = 491.0
@@ -51,6 +67,14 @@ offset_top = 326.0
 offset_right = 594.0
 offset_bottom = 349.0
 text = "Money: -1000"
+label_settings = SubResource("LabelSettings_344ge")
+
+[node name="Debt Text" type="Label" parent="." unique_id=1078245848]
+offset_left = 475.0
+offset_top = 254.0
+offset_right = 596.0
+offset_bottom = 277.0
+text = "You OWE $1000"
 label_settings = SubResource("LabelSettings_344ge")
 
 [node name="Test" type="Sprite2D" parent="." unique_id=1946862695]
@@ -61,6 +85,7 @@ centered = false
 [node name="Barriers" type="Node2D" parent="." unique_id=892252941]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Barriers" unique_id=1038495015]
+collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_hptm8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/StaticBody2D" unique_id=1422830948]
@@ -70,6 +95,7 @@ shape = SubResource("WorldBoundaryShape2D_fequl")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Barriers" unique_id=1303157733]
 position = Vector2(436, 0)
+collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_ynf5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/StaticBody2D2" unique_id=1938232923]
@@ -91,7 +117,7 @@ offset_right = 47.0
 offset_bottom = 351.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "x10"
+text = "x5"
 horizontal_alignment = 1
 
 [node name="x5Left" type="Label" parent="Labels" unique_id=1787488681]
@@ -106,7 +132,7 @@ offset_right = 97.0
 offset_bottom = 351.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "x5"
+text = "x3"
 horizontal_alignment = 1
 
 [node name="x2Left" type="Label" parent="Labels" unique_id=2124722151]
@@ -166,7 +192,7 @@ offset_right = 433.0
 offset_bottom = 349.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "x10"
+text = "x5"
 horizontal_alignment = 1
 
 [node name="x5Right" type="Label" parent="Labels" unique_id=372720620]
@@ -181,7 +207,7 @@ offset_right = 386.0
 offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "x5"
+text = "x3"
 horizontal_alignment = 1
 
 [node name="x2Right" type="Label" parent="Labels" unique_id=2013964562]
@@ -415,3 +441,71 @@ shape = SubResource("RectangleShape2D_fequl")
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="RigidBody2D" unique_id=1169009296]
 position = Vector2(391, 333)
 shape = SubResource("RectangleShape2D_fequl")
+
+[node name="Upgrade Buttons" type="VBoxContainer" parent="." unique_id=687970500]
+custom_maximum_size = Vector2(182.21, -1)
+offset_left = 449.0
+offset_top = 29.0
+offset_right = 631.21
+offset_bottom = 130.0
+
+[node name="+1 Plain Ball" type="Button" parent="Upgrade Buttons" unique_id=1482353212]
+layout_mode = 2
+text = "+1 Plain Ball: $10"
+
+[node name="+1 Ball Value" type="Button" parent="Upgrade Buttons" unique_id=1548334436]
+layout_mode = 2
+text = "+$1 Ball Value: $30"
+
+[node name="+1 Bounce Back" type="Button" parent="Upgrade Buttons" unique_id=1078390774]
+layout_mode = 2
+text = "+1 Bounce Back: $100"
+
+[node name="Refill" type="Button" parent="." unique_id=2136194635]
+offset_left = 450.0
+offset_top = 290.0
+offset_right = 531.0
+offset_bottom = 321.0
+text = "Call Mom (Refill)"
+
+[node name="Portal 1" type="Area2D" parent="." unique_id=1829549333 node_paths=PackedStringArray("linkedPortal")]
+position = Vector2(14, 111)
+collision_layer = 2
+script = ExtResource("10_d1ilt")
+startPos = Vector2(400, 111)
+endPos = Vector2(14, 111)
+linkedPortal = NodePath("../Portal 2")
+metadata/_custom_type_script = "uid://bi3ik5xh6s0kq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal 1" unique_id=735339747]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_d1ilt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Portal 1" unique_id=1158482040]
+position = Vector2(17, 0)
+scale = Vector2(3.125, 1)
+texture = ExtResource("10_hptm8")
+
+[node name="Portal 2" type="Area2D" parent="." unique_id=671335187 node_paths=PackedStringArray("linkedPortal")]
+position = Vector2(15, 259)
+collision_layer = 2
+script = ExtResource("10_d1ilt")
+startPos = Vector2(14, 256)
+endPos = Vector2(400, 256)
+linkedPortal = NodePath("../Portal 1")
+speed = 2.5
+metadata/_custom_type_script = "uid://bi3ik5xh6s0kq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal 2" unique_id=520440747]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_6iyac")
+
+[node name="Sprite2D" type="Sprite2D" parent="Portal 2" unique_id=1417563747]
+position = Vector2(17, 0)
+scale = Vector2(3.125, 1)
+texture = SubResource("CompressedTexture2D_d1ilt")
+
+[connection signal="pressed" from="Upgrade Buttons/+1 Plain Ball" to="." method="_on__ball_pressed"]
+[connection signal="pressed" from="Upgrade Buttons/+1 Ball Value" to="." method="_on__ball_value_pressed"]
+[connection signal="pressed" from="Upgrade Buttons/+1 Bounce Back" to="." method="_on__bounce_back_pressed"]
+[connection signal="pressed" from="Refill" to="." method="_on_refill_pressed"]
