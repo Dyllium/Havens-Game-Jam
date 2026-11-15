@@ -40,7 +40,7 @@ multipliers = [NodePath("Multipliers/x10"), NodePath("Multipliers/x5"), NodePath
 [node name="x0" parent="Multipliers" unique_id=495661200 instance=ExtResource("5_ynf5e")]
 
 [node name="BallSpawner" parent="." unique_id=1067192474 instance=ExtResource("1_8gbba")]
-position = Vector2(216, 40)
+position = Vector2(222, 23)
 
 [node name="ScoreText" type="Label" parent="." unique_id=2022087563]
 offset_left = 450.0
@@ -74,116 +74,306 @@ position = Vector2(4, 0)
 rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_ynf5e")
 
-[node name="Pegs" type="Node2D" parent="." unique_id=1474442105]
+[node name="Labels" type="Node2D" parent="." unique_id=335394715]
 
-[node name="Even" type="Node2D" parent="Pegs" unique_id=2041950744]
+[node name="x10Left" type="Label" parent="Labels" unique_id=2103983090]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = 328.0
+offset_right = 47.0
+offset_bottom = 351.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x10"
+horizontal_alignment = 1
 
-[node name="basicPeg10" parent="Pegs/Even" unique_id=1804966080 instance=ExtResource("9_ynf5e")]
-position = Vector2(39, 110)
+[node name="x5Left" type="Label" parent="Labels" unique_id=1787488681]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 57.0
+offset_top = 328.0
+offset_right = 97.0
+offset_bottom = 351.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x5"
+horizontal_alignment = 1
 
-[node name="basicPeg11" parent="Pegs/Even" unique_id=1430813493 instance=ExtResource("9_ynf5e")]
-position = Vector2(89, 110)
+[node name="x2Left" type="Label" parent="Labels" unique_id=2124722151]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 107.0
+offset_top = 327.0
+offset_right = 147.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x2"
+horizontal_alignment = 1
 
-[node name="basicPeg12" parent="Pegs/Even" unique_id=811167644 instance=ExtResource("9_ynf5e")]
-position = Vector2(139, 110)
+[node name="x1Left" type="Label" parent="Labels" unique_id=950942057]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 156.0
+offset_top = 327.0
+offset_right = 196.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x1"
+horizontal_alignment = 1
 
-[node name="basicPeg13" parent="Pegs/Even" unique_id=1848341935 instance=ExtResource("9_ynf5e")]
-position = Vector2(189, 110)
+[node name="x0" type="Label" parent="Labels" unique_id=138106879]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 203.0
+offset_top = 327.0
+offset_right = 243.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x0"
+horizontal_alignment = 1
 
-[node name="basicPeg14" parent="Pegs/Even" unique_id=115959436 instance=ExtResource("9_ynf5e")]
-position = Vector2(239, 110)
+[node name="x10Right" type="Label" parent="Labels" unique_id=457968230]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 393.0
+offset_top = 326.0
+offset_right = 433.0
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x10"
+horizontal_alignment = 1
 
-[node name="basicPeg15" parent="Pegs/Even" unique_id=2017211075 instance=ExtResource("9_ynf5e")]
-position = Vector2(289, 110)
+[node name="x5Right" type="Label" parent="Labels" unique_id=372720620]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 346.0
+offset_top = 327.0
+offset_right = 386.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x5"
+horizontal_alignment = 1
 
-[node name="basicPeg16" parent="Pegs/Even" unique_id=628141069 instance=ExtResource("9_ynf5e")]
-position = Vector2(339, 110)
+[node name="x2Right" type="Label" parent="Labels" unique_id=2013964562]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 298.0
+offset_top = 327.0
+offset_right = 338.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x2"
+horizontal_alignment = 1
 
-[node name="basicPeg17" parent="Pegs/Even" unique_id=2115998770 instance=ExtResource("9_ynf5e")]
-position = Vector2(389, 110)
+[node name="x1Right" type="Label" parent="Labels" unique_id=1531364608]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 251.0
+offset_top = 327.0
+offset_right = 291.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x1"
+horizontal_alignment = 1
 
-[node name="Even2" type="Node2D" parent="Pegs" unique_id=766579770]
-position = Vector2(0, 110)
+[node name="Pegs" type="Node2D" parent="." unique_id=1379390275]
 
-[node name="basicPeg10" parent="Pegs/Even2" unique_id=756570885 instance=ExtResource("9_ynf5e")]
-position = Vector2(39, 110)
+[node name="Odd" type="Node2D" parent="Pegs" unique_id=733799970]
 
-[node name="basicPeg11" parent="Pegs/Even2" unique_id=1215283746 instance=ExtResource("9_ynf5e")]
-position = Vector2(89, 110)
+[node name="basicPeg" parent="Pegs/Odd" unique_id=1804966080 instance=ExtResource("9_ynf5e")]
+position = Vector2(14, 50)
 
-[node name="basicPeg12" parent="Pegs/Even2" unique_id=2078561216 instance=ExtResource("9_ynf5e")]
-position = Vector2(139, 110)
+[node name="basicPeg2" parent="Pegs/Odd" unique_id=499908400 instance=ExtResource("9_ynf5e")]
+position = Vector2(64, 50)
 
-[node name="basicPeg13" parent="Pegs/Even2" unique_id=1867881225 instance=ExtResource("9_ynf5e")]
-position = Vector2(189, 110)
+[node name="basicPeg3" parent="Pegs/Odd" unique_id=1164099808 instance=ExtResource("9_ynf5e")]
+position = Vector2(114, 50)
 
-[node name="basicPeg14" parent="Pegs/Even2" unique_id=2142635736 instance=ExtResource("9_ynf5e")]
-position = Vector2(239, 110)
+[node name="basicPeg4" parent="Pegs/Odd" unique_id=43268901 instance=ExtResource("9_ynf5e")]
+position = Vector2(164, 50)
 
-[node name="basicPeg15" parent="Pegs/Even2" unique_id=29087330 instance=ExtResource("9_ynf5e")]
-position = Vector2(289, 110)
+[node name="basicPeg5" parent="Pegs/Odd" unique_id=1686455458 instance=ExtResource("9_ynf5e")]
+position = Vector2(214, 50)
 
-[node name="basicPeg16" parent="Pegs/Even2" unique_id=1265098569 instance=ExtResource("9_ynf5e")]
-position = Vector2(339, 110)
+[node name="basicPeg6" parent="Pegs/Odd" unique_id=1588826150 instance=ExtResource("9_ynf5e")]
+position = Vector2(264, 50)
 
-[node name="basicPeg17" parent="Pegs/Even2" unique_id=291415220 instance=ExtResource("9_ynf5e")]
-position = Vector2(389, 110)
+[node name="basicPeg7" parent="Pegs/Odd" unique_id=245747320 instance=ExtResource("9_ynf5e")]
+position = Vector2(314, 50)
 
-[node name="Odd" type="Node2D" parent="Pegs" unique_id=752053637]
+[node name="basicPeg8" parent="Pegs/Odd" unique_id=1593156975 instance=ExtResource("9_ynf5e")]
+position = Vector2(364, 50)
 
-[node name="basicPeg" parent="Pegs/Odd" unique_id=1935928484 instance=ExtResource("9_ynf5e")]
-position = Vector2(14, 62)
+[node name="basicPeg9" parent="Pegs/Odd" unique_id=833246046 instance=ExtResource("9_ynf5e")]
+position = Vector2(414, 50)
 
-[node name="basicPeg2" parent="Pegs/Odd" unique_id=1705328242 instance=ExtResource("9_ynf5e")]
-position = Vector2(64, 62)
+[node name="Odd3" type="Node2D" parent="Pegs" unique_id=1271203265]
 
-[node name="basicPeg3" parent="Pegs/Odd" unique_id=116937233 instance=ExtResource("9_ynf5e")]
-position = Vector2(114, 62)
+[node name="basicPeg" parent="Pegs/Odd3" unique_id=717523340 instance=ExtResource("9_ynf5e")]
+position = Vector2(14, 194)
 
-[node name="basicPeg4" parent="Pegs/Odd" unique_id=1251653328 instance=ExtResource("9_ynf5e")]
-position = Vector2(164, 62)
+[node name="basicPeg2" parent="Pegs/Odd3" unique_id=1408202600 instance=ExtResource("9_ynf5e")]
+position = Vector2(64, 194)
 
-[node name="basicPeg5" parent="Pegs/Odd" unique_id=1183384136 instance=ExtResource("9_ynf5e")]
-position = Vector2(214, 62)
+[node name="basicPeg3" parent="Pegs/Odd3" unique_id=1282331260 instance=ExtResource("9_ynf5e")]
+position = Vector2(114, 194)
 
-[node name="basicPeg6" parent="Pegs/Odd" unique_id=1879038383 instance=ExtResource("9_ynf5e")]
-position = Vector2(264, 62)
+[node name="basicPeg4" parent="Pegs/Odd3" unique_id=63220969 instance=ExtResource("9_ynf5e")]
+position = Vector2(164, 194)
 
-[node name="basicPeg7" parent="Pegs/Odd" unique_id=2136337964 instance=ExtResource("9_ynf5e")]
-position = Vector2(314, 62)
+[node name="basicPeg5" parent="Pegs/Odd3" unique_id=523339174 instance=ExtResource("9_ynf5e")]
+position = Vector2(214, 194)
 
-[node name="basicPeg8" parent="Pegs/Odd" unique_id=202619363 instance=ExtResource("9_ynf5e")]
-position = Vector2(364, 62)
+[node name="basicPeg6" parent="Pegs/Odd3" unique_id=546205156 instance=ExtResource("9_ynf5e")]
+position = Vector2(264, 194)
 
-[node name="basicPeg9" parent="Pegs/Odd" unique_id=553644695 instance=ExtResource("9_ynf5e")]
-position = Vector2(414, 62)
+[node name="basicPeg7" parent="Pegs/Odd3" unique_id=1900805765 instance=ExtResource("9_ynf5e")]
+position = Vector2(314, 194)
 
-[node name="Odd2" type="Node2D" parent="Pegs" unique_id=655756499]
-position = Vector2(0, 110)
+[node name="basicPeg8" parent="Pegs/Odd3" unique_id=2121457084 instance=ExtResource("9_ynf5e")]
+position = Vector2(364, 194)
 
-[node name="basicPeg" parent="Pegs/Odd2" unique_id=211693443 instance=ExtResource("9_ynf5e")]
-position = Vector2(14, 62)
+[node name="basicPeg9" parent="Pegs/Odd3" unique_id=943645888 instance=ExtResource("9_ynf5e")]
+position = Vector2(414, 194)
 
-[node name="basicPeg2" parent="Pegs/Odd2" unique_id=1096656720 instance=ExtResource("9_ynf5e")]
-position = Vector2(64, 62)
+[node name="Odd2" type="Node2D" parent="Pegs" unique_id=244525116]
 
-[node name="basicPeg3" parent="Pegs/Odd2" unique_id=1816147754 instance=ExtResource("9_ynf5e")]
-position = Vector2(114, 62)
+[node name="basicPeg" parent="Pegs/Odd2" unique_id=1153311033 instance=ExtResource("9_ynf5e")]
+position = Vector2(14, 122)
 
-[node name="basicPeg4" parent="Pegs/Odd2" unique_id=1743114752 instance=ExtResource("9_ynf5e")]
-position = Vector2(164, 62)
+[node name="basicPeg2" parent="Pegs/Odd2" unique_id=1890106093 instance=ExtResource("9_ynf5e")]
+position = Vector2(64, 122)
 
-[node name="basicPeg5" parent="Pegs/Odd2" unique_id=159680873 instance=ExtResource("9_ynf5e")]
-position = Vector2(214, 62)
+[node name="basicPeg3" parent="Pegs/Odd2" unique_id=553035001 instance=ExtResource("9_ynf5e")]
+position = Vector2(114, 122)
 
-[node name="basicPeg6" parent="Pegs/Odd2" unique_id=812956111 instance=ExtResource("9_ynf5e")]
-position = Vector2(264, 62)
+[node name="basicPeg4" parent="Pegs/Odd2" unique_id=2141967592 instance=ExtResource("9_ynf5e")]
+position = Vector2(164, 122)
 
-[node name="basicPeg7" parent="Pegs/Odd2" unique_id=2032562333 instance=ExtResource("9_ynf5e")]
-position = Vector2(314, 62)
+[node name="basicPeg5" parent="Pegs/Odd2" unique_id=1755483243 instance=ExtResource("9_ynf5e")]
+position = Vector2(214, 122)
 
-[node name="basicPeg8" parent="Pegs/Odd2" unique_id=646448321 instance=ExtResource("9_ynf5e")]
-position = Vector2(364, 62)
+[node name="basicPeg6" parent="Pegs/Odd2" unique_id=528890893 instance=ExtResource("9_ynf5e")]
+position = Vector2(264, 122)
 
-[node name="basicPeg9" parent="Pegs/Odd2" unique_id=1957759115 instance=ExtResource("9_ynf5e")]
-position = Vector2(414, 62)
+[node name="basicPeg7" parent="Pegs/Odd2" unique_id=2114031406 instance=ExtResource("9_ynf5e")]
+position = Vector2(314, 122)
+
+[node name="basicPeg8" parent="Pegs/Odd2" unique_id=1577574706 instance=ExtResource("9_ynf5e")]
+position = Vector2(364, 122)
+
+[node name="basicPeg9" parent="Pegs/Odd2" unique_id=1563964097 instance=ExtResource("9_ynf5e")]
+position = Vector2(414, 122)
+
+[node name="Even" type="Node2D" parent="Pegs" unique_id=872052827]
+
+[node name="basicPeg10" parent="Pegs/Even" unique_id=378859636 instance=ExtResource("9_ynf5e")]
+position = Vector2(389, 86)
+
+[node name="basicPeg11" parent="Pegs/Even" unique_id=1836059405 instance=ExtResource("9_ynf5e")]
+position = Vector2(289, 86)
+
+[node name="basicPeg12" parent="Pegs/Even" unique_id=1077079147 instance=ExtResource("9_ynf5e")]
+position = Vector2(239, 86)
+
+[node name="basicPeg13" parent="Pegs/Even" unique_id=214942339 instance=ExtResource("9_ynf5e")]
+position = Vector2(189, 86)
+
+[node name="basicPeg14" parent="Pegs/Even" unique_id=1958088571 instance=ExtResource("9_ynf5e")]
+position = Vector2(139, 86)
+
+[node name="basicPeg15" parent="Pegs/Even" unique_id=1598548342 instance=ExtResource("9_ynf5e")]
+position = Vector2(89, 86)
+
+[node name="basicPeg16" parent="Pegs/Even" unique_id=1625335311 instance=ExtResource("9_ynf5e")]
+position = Vector2(39, 86)
+
+[node name="basicPeg17" parent="Pegs/Even" unique_id=1000180109 instance=ExtResource("9_ynf5e")]
+position = Vector2(339, 86)
+
+[node name="Even3" type="Node2D" parent="Pegs" unique_id=800701386]
+
+[node name="basicPeg10" parent="Pegs/Even3" unique_id=1701375096 instance=ExtResource("9_ynf5e")]
+position = Vector2(389, 230)
+
+[node name="basicPeg11" parent="Pegs/Even3" unique_id=1076533789 instance=ExtResource("9_ynf5e")]
+position = Vector2(289, 230)
+
+[node name="basicPeg12" parent="Pegs/Even3" unique_id=421630875 instance=ExtResource("9_ynf5e")]
+position = Vector2(239, 230)
+
+[node name="basicPeg13" parent="Pegs/Even3" unique_id=1693330630 instance=ExtResource("9_ynf5e")]
+position = Vector2(189, 230)
+
+[node name="basicPeg14" parent="Pegs/Even3" unique_id=545695227 instance=ExtResource("9_ynf5e")]
+position = Vector2(139, 230)
+
+[node name="basicPeg15" parent="Pegs/Even3" unique_id=2007200727 instance=ExtResource("9_ynf5e")]
+position = Vector2(89, 230)
+
+[node name="basicPeg16" parent="Pegs/Even3" unique_id=1255088326 instance=ExtResource("9_ynf5e")]
+position = Vector2(39, 230)
+
+[node name="basicPeg17" parent="Pegs/Even3" unique_id=2018421761 instance=ExtResource("9_ynf5e")]
+position = Vector2(339, 230)
+
+[node name="Even2" type="Node2D" parent="Pegs" unique_id=1728855235]
+
+[node name="basicPeg10" parent="Pegs/Even2" unique_id=1287122618 instance=ExtResource("9_ynf5e")]
+position = Vector2(389, 158)
+
+[node name="basicPeg11" parent="Pegs/Even2" unique_id=833889553 instance=ExtResource("9_ynf5e")]
+position = Vector2(289, 158)
+
+[node name="basicPeg12" parent="Pegs/Even2" unique_id=1371596437 instance=ExtResource("9_ynf5e")]
+position = Vector2(239, 158)
+
+[node name="basicPeg13" parent="Pegs/Even2" unique_id=1361055255 instance=ExtResource("9_ynf5e")]
+position = Vector2(189, 158)
+
+[node name="basicPeg14" parent="Pegs/Even2" unique_id=930395210 instance=ExtResource("9_ynf5e")]
+position = Vector2(139, 158)
+
+[node name="basicPeg15" parent="Pegs/Even2" unique_id=1891927637 instance=ExtResource("9_ynf5e")]
+position = Vector2(89, 158)
+
+[node name="basicPeg16" parent="Pegs/Even2" unique_id=1945749730 instance=ExtResource("9_ynf5e")]
+position = Vector2(39, 158)
+
+[node name="basicPeg17" parent="Pegs/Even2" unique_id=856936454 instance=ExtResource("9_ynf5e")]
+position = Vector2(339, 158)
